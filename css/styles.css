@@ -84,7 +84,7 @@ nav {
   color: var(--white);
 }
 
-a.active {
+a.active-tab {
   color: var(--primary-color) !important;
 }
 
@@ -287,10 +287,6 @@ a.active {
   display: grid;
   align-items: center;
 }
-
-/* .interest p {
-  text-align: center;
-} */
 
 @media (width > 768px) {
   nav {

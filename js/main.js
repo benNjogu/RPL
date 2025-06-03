@@ -1,29 +1,29 @@
 const menuBtn = document.getElementById("menu-btn");
-// const navLinks = document.getElementById("nav-links");
+const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 // FAQs accordion
 const accordionItemHeaders = document.querySelectorAll(
   ".accordion-item-header"
 );
 
-// menuBtn.addEventListener("click", (e) => {
-//   navLinks.classList.toggle("open");
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
 
-//   const isOpen = navLinks.classList.contains("open");
-//   menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-// });
-
-// navLinks.addEventListener("click", (e) => {
-//   navLinks.classList.remove("open");
-//   menuBtnIcon.setAttribute("class", "ri-menu-line");
-// });
-
-const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll("nav a").forEach((link) => {
-  if (link.href.includes(`${activePage}`)) {
-    link.classList.add("active");
-  }
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
 });
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
+
+// const activePage = window.location.pathname;
+// navLinks = document.querySelectorAll("nav a").forEach((link) => {
+//   if (link.href.includes(`${activePage}`)) {
+//     link.classList.add("active-tab");
+//   }
+// });
 
 const scrollRevealOption = {
   distance: "50px",
@@ -61,15 +61,6 @@ ScrollReveal().reveal(".header__image__card", {
   interval: 500,
   delay: 2500,
 });
-
-// // NAV active tab
-// const activePage = window.location.pathname;
-// const navLinks = document.querySelectorAll("nav a").forEach((link) => {
-//   if (link.href.includes(`${activePage}`)) {
-//     link.classList.add("active");
-//     console.log(link);
-//   }
-// });
 
 // FAQs accordion
 accordionItemHeaders.forEach((accordionItemHeader) => {
