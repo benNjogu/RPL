@@ -88,11 +88,10 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
   });
 });
 
-// Simple visitor counter stored in sessionStorage (per browser session)
-if (!sessionStorage.getItem("visitorCount")) {
-  sessionStorage.setItem("visitorCount", "0");
-}
-let count = parseInt(sessionStorage.getItem("visitorCount"), 10);
-count++;
-sessionStorage.setItem("visitorCount", count);
-document.getElementById("visitorCount").textContent = count;
+// Fetch counts from PHP API
+fetch("fetch_counts.php")
+  .then((res) => res.json())
+  .then((data) => {
+    document.getElementById("visitCount").textContent = data.visits;
+    document.getElementById("userCount").textContent = data.users;
+  });
