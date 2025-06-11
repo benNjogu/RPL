@@ -18,13 +18,6 @@ navLinks.addEventListener("click", (e) => {
   menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
 
-// const activePage = window.location.pathname;
-// navLinks = document.querySelectorAll("nav a").forEach((link) => {
-//   if (link.href.includes(`${activePage}`)) {
-//     link.classList.add("active-tab");
-//   }
-// });
-
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
