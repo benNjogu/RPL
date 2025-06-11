@@ -81,14 +81,6 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
   });
 });
 
-// Fetch counts from PHP API
-// fetch("include/fetch_counts.php")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     document.getElementById("visitCount").textContent = data.visits;
-//     document.getElementById("userCount").textContent = data.users;
-//   });
-
 document.addEventListener("DOMContentLoaded", () => {
   fetch("include/fetch_counts.php")
     .then((response) => response.json())
