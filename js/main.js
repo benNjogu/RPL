@@ -82,9 +82,24 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
 });
 
 // Fetch counts from PHP API
-fetch("include/fetch_counts.php")
-  .then((res) => res.json())
-  .then((data) => {
-    document.getElementById("visitCount").textContent = data.visits;
-    document.getElementById("userCount").textContent = data.users;
-  });
+// fetch("include/fetch_counts.php")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     document.getElementById("visitCount").textContent = data.visits;
+//     document.getElementById("userCount").textContent = data.users;
+//   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("include/fetch_counts.php")
+    .then((response) => response.json())
+    .then((data) => {
+      const visitElem = document.getElementById("visitCount");
+      const userElem = document.getElementById("userCount");
+
+      if (visitElem) visitElem.textContent = data.visits;
+      if (userElem) userElem.textContent = data.users;
+    })
+    .catch((error) => {
+      console.error("Error fetching counts:", error);
+    });
+});
