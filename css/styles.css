@@ -121,7 +121,7 @@ a.active-tab {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("assets/flag-kenya.png");
+  background-image: url("../assets/flag-kenya.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
