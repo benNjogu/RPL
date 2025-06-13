@@ -7,25 +7,32 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Collect form data
 $full_name = $_POST['full_name'];
 $county = $_POST['county'];
 $subcounty = $_POST['subcounty'];
 $ward = $_POST['ward'];
-$gender = $_POST['gender'];
 
-$sql = "INSERT INTO users (full_name, county, subcounty, ward, gender)
-        VALUES (?, ?, ?, ?, ?)";
+// Handle gender with default to 'male' and validation
+$gender = $_POST['gender'] ?? 'male';
+$gender = strtolower($gender);
+if ($gender !== 'male' && $gender !== 'female') {
+    $gender = 'male';
+}
+
+$phone = $_POST['phone'];
+$trade = $_POST['trade'];
+
+// Validate phone number starts with 254
+if (substr($phone, 0, 3) !== '254') {
+    die("Phone number must start with country code 254.");
+}
+
+$sql = "INSERT INTO users (full_name, county, subcounty, ward, gender, phone, trade)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $full_name, $county, $subcounty, $ward, $gender);
-
-// if ($stmt->execute()) {
-//     // Redirect to NITA website on success
-//     header("Location: https://bernadnjogu.netlify.app/#home");
-//     exit();
-// } else {
-//     echo "Error: " . $stmt->error;
-// }
+$stmt->bind_param("sssssss", $full_name, $county, $subcounty, $ward, $gender, $phone, $trade);
 
 if ($stmt->execute()) {
     echo "
