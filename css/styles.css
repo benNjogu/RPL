@@ -457,11 +457,11 @@ a.active-tab {
   }
 }
 
-.site-footer {
+/* .footer {
   display: flex;
   justify-content: center;
   padding-bottom: 2rem;
-}
+} */
 
 /* Testimonials section */
 .section__container {
@@ -541,7 +541,7 @@ a.active-tab {
   color: var(--primary-color);
 }
 
-.footer h4 {
+/* .footer h4 {
   font-family: "Noto Serif", serif;
   font-size: 1.25rem;
   font-weight: 900;
@@ -554,8 +554,8 @@ a.active-tab {
   font-size: 0.9rem;
   line-height: 1.5rem;
   margin-bottom: 2rem;
-}
-
+} */
+/* 
 .footer button {
   padding: 1rem 2rem;
   outline: none;
@@ -566,7 +566,7 @@ a.active-tab {
   background-color: var(--primary-color);
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 @media (width < 900px) {
   .testimonials__grid {
@@ -670,5 +670,92 @@ a.active-tab {
   }
   .form :where(.gender-option, .gender) {
     row-gap: 15px;
+  }
+}
+
+.testimonials-footer p {
+  color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+  background-color: var(--white);
+}
+.footerContainer {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+.socialIcons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0, 9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover {
+  background-color: #111;
+  transition: 0.5s;
+}
+.socialIcons a:hover i {
+  color: white;
+  transition: 0.5s;
+}
+.footerNav {
+  margin: 30px 0;
+}
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.footerNav ul li a {
+  color: #0000ee;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.footerNav ul li a:hover {
+  opacity: 1;
+}
+.footerBottom {
+  background-color: var(--white);
+  padding: 20px;
+  text-align: center;
+}
+.footerBottom p {
+  color: var(--text-dark);
+}
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+@media (max-width: 700px) {
+  .footerNav ul {
+    flex-direction: column;
+  }
+  .footerNav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+  }
+  .socialIcons a {
+    padding: 8px;
+    margin: 4px;
   }
 }

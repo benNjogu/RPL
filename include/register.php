@@ -19,9 +19,29 @@ $sql = "INSERT INTO users (full_name, county, subcounty, ward, gender)
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $full_name, $county, $subcounty, $ward, $gender);
 
+// if ($stmt->execute()) {
+//     // Redirect to NITA website on success
+//     header("Location: https://bernadnjogu.netlify.app/#home");
+//     exit();
+// } else {
+//     echo "Error: " . $stmt->error;
+// }
+
 if ($stmt->execute()) {
-    // Redirect to NITA website on success
-    header("Location: https://bernadnjogu.netlify.app/#home");
+    echo "
+    <html>
+      <head>
+        <title>Redirecting...</title>
+        <script>
+          setTimeout(() => {
+            window.location.href = 'https://bernadnjogu.netlify.app/#home';
+          }, 3000); // 3 seconds delay
+        </script>
+      </head>
+      <body>
+        <h2>Please wait, you are being redirected...</h2>
+      </body>
+    </html>";
     exit();
 } else {
     echo "Error: " . $stmt->error;
