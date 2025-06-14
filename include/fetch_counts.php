@@ -9,11 +9,11 @@ if ($conn->connect_error) {
 
 // Check if the 'visited' cookie is already set
 if (!isset($_COOKIE['visited'])) {
-    // Set a cookie that expires in 30 days
-    setcookie('visited', 'true', time() + (86400 * 30), "/"); // 86400 = 1 day
-
     // Increment visit count in DB
     $conn->query("UPDATE visits SET count = count + 1 WHERE id = 1");
+
+    // Set a cookie that expires in 30 days
+    setcookie('visited', 'true', time() + (86400 * 30), "/"); // 86400 = 1 day
 }
 
 // Fetch updated counts

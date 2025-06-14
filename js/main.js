@@ -83,13 +83,22 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("include/fetch_counts.php")
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      console.log(response);
+      return response.json();
+    })
     .then((data) => {
+      console.log("THE DATA IS", data);
       const visitElem = document.getElementById("visitCount");
       const userElem = document.getElementById("userCount");
 
       if (visitElem) visitElem.textContent = data.visits;
       if (userElem) userElem.textContent = data.users;
+
+      console.log(data.visits);
     })
     .catch((error) => {
       console.error("Error fetching counts:", error);

@@ -483,7 +483,6 @@ a.active-tab {
 }
 
 .header h1 {
-  font-family: "Noto Serif", serif;
   font-size: 2rem;
   font-weight: 900;
 }
@@ -678,96 +677,112 @@ a.active-tab {
 }
 
 /* Footer */
-footer {
-  background-color: var(--white);
-}
-.footerContainer {
+
+.footer-container {
+  max-width: 1200px;
   width: 100%;
-  padding: 70px 30px 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: var(--max-width);
   margin: auto;
 }
-.socialIcons {
+.row {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
-.socialIcons a {
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: var(--white);
+  padding: 70px 0;
+  padding-bottom: 16px;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: var(--text-dark);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--text-light);
   text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: var(--text-dark);
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: all 0.5s ease;
+
+  /* text-decoration: none;
   padding: 10px;
   background-color: white;
   margin: 10px;
   border-radius: 50%;
-  height: 56px;
+  height: 56px; */
 }
-.socialIcons a i {
-  font-size: 2em;
-  color: black;
-  opacity: 0, 9;
-}
-/* Hover affect on social media icon */
-.socialIcons a:hover {
+.footer-col .social-links a:hover {
+  /* color: #24262b;
+  background-color: var(--text-light); */
   background-color: #111;
   transition: 0.5s;
 }
-.socialIcons a:hover i {
+.footer-col .social-links a i {
+  font-size: 1.4em;
+  color: black;
+  opacity: 0, 9;
+}
+.footer-col .social-links a:hover i {
   color: white;
   transition: 0.5s;
 }
-.footerNav {
-  margin: 30px 0;
+.contact-list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
-.hash-tags ul {
-  flex-direction: column;
-  list-style-type: none;
-}
-.hash-tags li {
-  margin-bottom: 8px;
-}
-.hash-tags li:first-child {
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 6px;
-}
-.contacts ul {
-  flex-direction: column;
-  list-style-type: none;
+.email-link {
+  text-transform: lowercase;
 }
 .contact-icon {
-  color: #be000a;
-  margin-right: 8px;
-  font-size: 1.2em;
+  margin-right: 0.2rem;
 }
-.contact-list li {
-  margin-bottom: 8px;
-}
-.contact-list li:first-child {
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 6px;
-}
-.footerNav ul li a {
-  color: #0000ee;
-  /* margin: 20px; */
-  text-decoration: none;
-  font-size: 1.3em;
-  opacity: 0.7;
-  transition: 0.5s;
-}
-.footerNav ul li a:hover {
-  opacity: 1;
-}
-.footerBottom {
+.copyright-tag {
   background-color: var(--white);
   padding: 20px;
   text-align: center;
 }
-.footerBottom p {
+.copyright-tag p {
   color: var(--text-dark);
 }
 .designer {
@@ -778,21 +793,15 @@ footer {
   margin: 0px 5px;
 }
 
-@media (max-width: 700px) {
-  .footerContainer {
-    flex-direction: column;
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
   }
-  .footerNav {
-    flex-direction: column;
-  }
-  .footerNav ul li {
+}
+@media (max-width: 574px) {
+  .footer-col {
     width: 100%;
-    text-align: center;
-    margin: 10px;
-  }
-  .socialIcons a {
-    padding: 8px;
-    margin: 4px;
-    height: 52px;
   }
 }
