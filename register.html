@@ -116,43 +116,23 @@
             </div>
           </div>
           <div class="input-box">
-            <label>Trade</label>
-            <input
-              type="text"
-              name="trade"
-              placeholder="Enter trade"
-              required
-            />
+            <label for="trade">Trade</label>
+            <select name="trade" id="trade" required></select>
           </div>
           <div class="input-box">
-            <label>County</label>
-            <input
-              type="text"
-              name="county"
-              placeholder="Enter County"
-              required
-            />
+            <label for="county">County</label>
+            <select name="county" id="county" required></select>
           </div>
-          <div class="column">
-            <div class="input-box">
-              <label>Sub-County</label>
-              <input
-                type="text"
-                name="subcounty"
-                placeholder="Enter Sub-County"
-                required
-              />
-            </div>
-            <div class="input-box">
-              <label>Ward</label>
-              <input
-                type="text"
-                name="ward"
-                placeholder="Enter Ward"
-                required
-              />
-            </div>
+
+          <div class="input-box">
+            <label for="subcounty">Subcounty</label>
+            <select name="subcounty" id="subcounty" required></select>
           </div>
+          <div class="input-box">
+            <label for="ward">Ward</label>
+            <select name="ward" id="ward" required></select>
+          </div>
+          <!-- </div> -->
 
           <button>NEXT</button>
         </form>
@@ -279,7 +259,7 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
     <script></script>
   </body>
 </html>

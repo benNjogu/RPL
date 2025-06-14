@@ -602,6 +602,18 @@ a.active-tab {
   border-radius: 6px;
   padding: 0 15px;
 }
+.form :where(.input-box select, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
 .input-box input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
@@ -638,14 +650,6 @@ a.active-tab {
 }
 .address :where(input, .select-box) {
   margin-top: 15px;
-}
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
-  font-size: 1rem;
 }
 .form button {
   height: 55px;

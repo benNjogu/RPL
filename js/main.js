@@ -1,3 +1,5 @@
+// import { trades } from "./data/trades.js";
+
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
@@ -102,5 +104,104 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.error("Error fetching counts:", error);
+    });
+});
+
+/*
+
+// Trade options
+const trades = [
+  { value: "carpentry", label: "Carpentry" },
+  { value: "plumbing", label: "Plumbing" },
+  { value: "electrical", label: "Electrical" },
+  { value: "masonry", label: "Masonry" },
+  { value: "welding", label: "Welding" },
+];
+
+// County options
+const counties = [
+  { value: "nairobi", label: "Nairobi" },
+  { value: "mombasa", label: "Mombasa" },
+  { value: "kisumu", label: "Kisumu" },
+  { value: "kiambu", label: "Kiambu" },
+  { value: "nakuru", label: "Nakuru" },
+];
+
+// Subcounty options
+const subcounties = [
+  { value: "langata", label: "Lang'ata" },
+  { value: "westlands", label: "Westlands" },
+  { value: "likoni", label: "Likoni" },
+  { value: "embu-west", label: "Embu West" },
+  { value: "nakuru-town", label: "Nakuru Town" },
+];
+
+// Wards
+const wards = [
+  { value: "south-c", label: "South C" },
+  { value: "githurai", label: "Githurai" },
+  { value: "mtwapa", label: "Mtwapa" },
+  { value: "nanyuki-central", label: "Nanyuki Central" },
+  { value: "rukanga", label: "Rukanga" },
+];
+
+// Helper function to populate any select
+function populateSelect(selectId, options, placeholder = "Select an option") {
+  const select = document.getElementById(selectId);
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  defaultOption.textContent = placeholder;
+  select.appendChild(defaultOption);
+
+  options.forEach((option) => {
+    const el = document.createElement("option");
+    el.value = option.value;
+    el.textContent = option.label;
+    select.appendChild(el);
+  });
+}
+
+// Wait for DOM
+document.addEventListener("DOMContentLoaded", () => {
+  populateSelect("trade", trades, "Select a trade");
+  populateSelect("county", counties, "Select a county");
+  populateSelect("subcounty", subcounties, "Select a subcounty");
+  populateSelect("ward", wards, "Select a ward");
+});
+*/
+
+function populateSelect(selectId, options, placeholder = "Select an option") {
+  const select = document.getElementById(selectId);
+  if (!select) return;
+
+  select.innerHTML = ""; // clear previous
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  defaultOption.textContent = placeholder;
+  select.appendChild(defaultOption);
+
+  options.forEach((option) => {
+    const el = document.createElement("option");
+    el.value = option.value;
+    el.textContent = option.label;
+    select.appendChild(el);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("include/fetch_data.php")
+    .then((res) => res.json())
+    .then((data) => {
+      populateSelect("trade", data.trades, "Select a trade");
+      populateSelect("county", data.counties, "Select a county");
+      populateSelect("subcounty", data.subcounties, "Select a subcounty");
+      populateSelect("ward", data.wards, "Select a ward");
+    })
+    .catch((err) => {
+      console.error("Failed to fetch data:", err);
     });
 });
