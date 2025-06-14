@@ -105,6 +105,7 @@ a.active-tab {
   gap: 2rem;
   overflow-x: hidden;
   overflow-y: hidden;
+  padding-bottom: 0;
 }
 
 .header__image {
@@ -204,7 +205,7 @@ a.active-tab {
 }
 
 .header__content .visits_counter {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -462,6 +463,22 @@ a.active-tab {
   justify-content: center;
   padding-bottom: 2rem;
 } */
+/* Fee section */
+.fee_section {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.fee_section p {
+  margin-bottom: 0.5rem;
+  columns: var(--text-light);
+  line-height: 1.75rem;
+}
+.fee_section-table {
+  margin-top: 8px;
+}
 
 /* Testimonials section */
 .section__container {
