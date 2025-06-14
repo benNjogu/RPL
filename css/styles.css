@@ -466,7 +466,7 @@ a.active-tab {
 /* Testimonials section */
 .section__container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: auto;
   padding: 1rem;
   text-align: center;
@@ -679,7 +679,7 @@ a.active-tab {
 /* Footer */
 
 .footer-container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   width: 100%;
   margin: auto;
 }
@@ -691,6 +691,9 @@ ul {
   list-style: none;
 }
 .footer {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
   background-color: var(--white);
   padding: 70px 0;
   padding-bottom: 16px;
@@ -745,17 +748,8 @@ ul {
   border-radius: 50%;
   color: var(--primary-color);
   transition: all 0.5s ease;
-
-  /* text-decoration: none;
-  padding: 10px;
-  background-color: white;
-  margin: 10px;
-  border-radius: 50%;
-  height: 56px; */
 }
 .footer-col .social-links a:hover {
-  /* color: #24262b;
-  background-color: var(--text-light); */
   background-color: #111;
   transition: 0.5s;
 }
