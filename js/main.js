@@ -1,5 +1,3 @@
-// import { trades } from "./data/trades.js";
-
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
@@ -26,7 +24,7 @@ const scrollRevealOption = {
   duration: 1000,
 };
 
-ScrollReveal().reveal(".header__image img", {
+/*ScrollReveal().reveal(".header__image img", {
   ...scrollRevealOption,
   origin: "right",
 });
@@ -55,7 +53,7 @@ ScrollReveal().reveal(".header__image__card", {
   duration: 1000,
   interval: 500,
   delay: 2500,
-});
+}); */
 
 // FAQs accordion
 accordionItemHeaders.forEach((accordionItemHeader) => {
